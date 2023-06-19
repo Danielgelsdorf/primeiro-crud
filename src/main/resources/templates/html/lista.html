@@ -1,0 +1,36 @@
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title> Lista de livros</title>
+</head>
+<body>
+<a href="/cadastro">Cadastrar novo livro</a>
+<h1> Aqui a lista de livros</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Nome do livro</th>
+        <th>Ano de publicação</th>
+        <th> Altor</th>
+        <th> Cadegoria</th>
+        <th> AÇÕES </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="livro : ${lista}">
+        <td th:text="${livro.nome}"></td>
+        <td th:text="${livro.anoLancamento}"></td>
+        <td th:text="${livro.altor}"></td>
+        <td th:text="${livro.categoria}"></td>
+<td><a th:href="@{/cadastro/atualiza?id={id}(id=${livro.id})}"> Editar <span th:text="${livro.nome}"></span></a></td>
+        <td><form action="/cadastro" method="post">
+            <input type="hidden" name="_method" value="delete">
+        <input type="hidden" name="id" th:value=${livro.id}>
+        <input type="submit"value="deletar" th:text="${livro.nome}">
+        </form></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

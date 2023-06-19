@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de livro</title>
+</head>
+<body>
+<h1> Cadastro</h1>
+<a href="/busca"> Voltar para lista </a>
+<h2>Cadastro de livro</h2>
+<form method="post">
+    <label for="nome">Nome do livro:</label>
+    <input id="nome" name="nome">
+    <br>
+    <label for="ano">Ano de publicação:</label>
+    <input id="ano" name="anoLancamento">
+    <br>
+    <label for="altor">quem publicou:</label>
+    <input id="altor" name="altor">
+    <br>
+    <label for="categoria">Categoria do livro:</label>
+    <input id="categoria" name="categoria">
+    <br>
+    <input type="submit" value="enviar">
+</form>
+</body>
+</html>
